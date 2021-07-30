@@ -1,8 +1,44 @@
-import { getOrders } from "./database.js"
+import { getInteriors, getOrders, getPaintColors, getTechnologies, getWheels } from "./database.js"
 
 const buildOrderListItem = (order) => {
+
+    const paintColors = getPaintColors()
+        const foundPaintColor = paintColors.find(
+            (paintColor) => {
+                return paintColor.id === order.paintColorId
+            }
+        )
+
+    const interiors = getInteriors()
+        const foundInterior = interiors.find(
+            (interior) => {
+                return interior.id === order.interiorId
+            }
+        )
+
+    const technologies = getTechnologies()
+        const foundTechnology = technologies.find(
+            (technology) => {
+                return technology.id === order.technologyId
+            }
+        )
+
+    const wheels = getWheels()
+        const foundWheel = wheels.find(
+            (wheel) => {
+                return wheel.id === order.wheelId
+            }
+        )
+
+        const totalCost = foundPaintColor.price + foundInterior.price + foundTechnology.price + foundWheel.price
+
+        const costString = totalCost.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD"
+        })
+
     return `<li>
-        Order #${order.id} was placed on ${order.timestamp}
+        Order #${order.id} costs ${costString}
     </li>`
 }
 

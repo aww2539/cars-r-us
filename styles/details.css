@@ -1,0 +1,41 @@
+.choices {
+    display: flex;
+    flex-direction: row;
+}
+
+.options {
+    flex-basis: 24%;
+    margin: 2rem;
+    border: 1px dashed dodgerblue;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    height: 250px;
+    min-width: 130px;
+}
+
+.customOrders {
+    margin: 1rem 0 2rem 2rem;
+}
+
+.types {
+    border: 1px dashed dodgerblue;
+    margin: 2.3em;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+    max-width: 250px;
+    min-width: 250px;
+}
+
+.types ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 1em;
+    max-width: 250px;
+}
+
+.types li {
+    display: flex;
+    padding: 0.5em;
+}

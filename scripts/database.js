@@ -47,3 +47,19 @@ export const getTechnologies = () => {
 export const getWheels = () => {
     return database.wheels.map(wheel => ({...wheel}))
 }
+
+export const setPaintColor = (id) => {
+    database.orderBuilder.paintColorId = id
+}
+
+export const setInterior = (id) => {
+    database.orderBuilder.interiorId = id
+}
+
+export const setTechnology = (id) => {
+    database.orderBuilder.technologyId = id
+}
+
+export const setWheel = (id) => {
+    database.orderBuilder.wheelId = id
+}
